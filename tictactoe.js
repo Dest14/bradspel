@@ -149,3 +149,5 @@ function displayLeaderboard() {
 }
 
 restartButton.addEventListener('click', startGame);
+
+//tictac toe.js

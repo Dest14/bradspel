@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       const winnerName = circleTurn ? playerNames[1].name : playerNames[0].name;
       const winnerSymbol = circleTurn ? playerNames[1].symbol : playerNames[0].symbol;
-      winningMessageTextElement.innerText = `${winnerName}'s (${winnerSymbol}) Wins!`;
+      winningMessageTextElement.innerText = `${winnerName}'s (${winnerSymbol}) wins!`;
 
 
       updateLeaderboard(winnerName, round, p1, p2);

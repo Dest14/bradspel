@@ -16,3 +16,4 @@ playButton.addEventListener('click', function () {
   alert('Game is starting...');
 });
 
+//script.js
