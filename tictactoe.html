@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="tictactoe.css">
+</head>
+
+<body>
+  <section id="home">
+    <span style="font-size:30px;cursor:pointer">
+      <a href="index.html" style="text-decoration: none">&#127968;</a>
+    </span>
+    <span style="font-size:30px;cursor:pointer;">
+      <a href="leaderboard.html" style="text-decoration: none;">&#128203;</a>
+    </span>
+  </section>
+
+  <section id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">
+      <p>
+      <h6>Välkommen till 3 i rad spelet<br> för att navigera hem och komma <br>till leaderboard tryck på emojiserna</h6>
+      <h6>Round:</h6> <span id="round"></span></p>
+    </span>
+  </section>
+
+  <div class="board" id="board">
+    <div class="board" id="board">
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+      <div class="cell" data-cell></div>
+    </div>
+  </div>
+
+  <div class="winning-message" id="winningMessage">
+    <div data-winning-message-text></div>
+    <button id="restartButton">Restart</button>
+  </div>
+
+  <script src="tictactoe.js"></script>
+  <script>
+    const storedPlayerNames = JSON.parse(localStorage.getItem('playerNames'));
+    const playerNames = storedPlayerNames || ['Player 1', 'Player 2'];
+    initializeGame(playerNames);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Names Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #85FFBD;
+      background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    #main {
+      padding: 20px;
+    }
+
+    span {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="main">
+    <span style="font-size:30px;cursor:pointer">
+      <a href="index.html" style="text-decoration: none">&#127968; Home</a>
+    </span>
+  </section>
+
+  <div class="container">
+    <form id="registrationForm">
+      <label for="player1">Player 1 (X's)</label>
+      <input type="text" id="player1" name="player1" placeholder="Player 1" required>
+
+      <label for="player2">Player 2 (O's)</label>
+      <input type="text" id="player2" name="player2" placeholder="Player 2" required>
+
+      <input type="submit" value="Register" onclick="savePlayerNames(event)">
+    </form>
+  </div>
+
+  <script>
+    function savePlayerNames(event) {
+      event.preventDefault();
+
+      const player1 = document.getElementById("player1").value;
+      const player2 = document.getElementById("player2").value;
+
+      if (player1 && player2) {
+        const playerNames = [
+          { name: player1, symbol: 'X' },
+          { name: player2, symbol: 'O' }
+        ];
+
+        // Store player names in local storage
+        localStorage.setItem("playerNames", JSON.stringify(playerNames));
+
+        // Redirect to tictactoe.html
+        window.location.href = "tictactoe.html";
+      } else {
+        alert("Please enter names for both players.");
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="leaderboard.css">
+</head>
+
+<body>
+  <section id="home">
+    <span style="font-size:30px;cursor:pointer">
+      <a href="index.html" style="text-decoration: none">&#127968;</a>
+    </span>
+  </section>
+
+  <section id="leaderboard">
+    <h2>Leaderboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Rounds</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboardBody"></tbody> <!-- Ensure this line is present -->
+    </table>
+  </section>
+  <button id="resetLeaderboardButton" class="reset-button">Reset Leaderboard</button>
+
+
+
+  <script src="leaderboard.js"></script>
+</body>
+
+</html>
