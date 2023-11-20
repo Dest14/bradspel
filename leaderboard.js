@@ -1,34 +1,53 @@
+
+document.addEventListener('DOMContentLoaded', function () {
+  const matchHistoryBody = document.getElementById('matchHistoryBody');
+  displayMatchHistory();
+
+  function displayMatchHistory() {
+    const row = document.createElement('tr');
+    row.innerHTML = ``;
+    matchHistoryBody.appendChild(row);
+  }
+});
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
   const leaderboardBody = document.getElementById('leaderboardBody');
   displayLeaderboard();
 
   function displayLeaderboard() {
     const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
-    leaderboard.sort((a, b) => a.rounds - b.rounds); // Sort by rounds ascending
+    const playerNames = JSON.parse(localStorage.getItem("playerNames")) || [];
+    leaderboard.sort((a, b) => a.rounds - b.rounds);
 
     leaderboardBody.innerHTML = '';
     leaderboard.forEach((entry) => {
       const row = document.createElement('tr');
-      row.innerHTML = `<td>${entry.name}</td><td>${entry.rounds}</td>`;
+      row.innerHTML = `<td>${entry.name}</td><td>${entry.rounds}</td><td>${playerNames[0].name}</td> <td>${playerNames[1].name}</td>`;
       leaderboardBody.appendChild(row);
     });
   }
 
-  // Add this function to update the leaderboard
-  function updateLeaderboard(winnerName, rounds) {
+  function updateLeaderboard(winnerName, rounds, p1, p2) {
     const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-    leaderboard.push({ name: winnerName, rounds: rounds });
+    const playerNames = JSON.parse(localStorage.getItem("playerNames")) || [];
+    leaderboard.push({ name: winnerName, rounds: rounds, name: p1, name: p2 });
     localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
-    displayLeaderboard(); // Update the leaderboard display after adding a new entry
+    localStorage.setItem("playerNames", JSON.stringify(playerNames));
+
+    displayLeaderboard();
   }
 
   function resetLeaderboard() {
     localStorage.removeItem('leaderboard');
-    displayLeaderboard(); // Refresh the displayed leaderboard
+    displayLeaderboard();
   }
   document.getElementById('resetLeaderboardButton').addEventListener('click', resetLeaderboard);
 
-  // Update the endGame function to call updateLeaderboard
+
   function endGame(draw) {
     if (draw) {
       winningMessageTextElement.innerText = 'Draw!';
@@ -37,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const winnerSymbol = circleTurn ? playerNames[1].symbol : playerNames[0].symbol;
       winningMessageTextElement.innerText = `${winnerName}'s (${winnerSymbol}) Wins!`;
 
-      // Update the leaderboard
-      updateLeaderboard(winnerName, round);
+
+      updateLeaderboard(winnerName, round, p1, p2);
     }
     winningMessageElement.classList.add('show');
     updateRoundCount();

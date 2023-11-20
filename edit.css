@@ -2,8 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Noto+Sans:wght@100&display=swap');
 
 body {
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-image: linear-gradient(to right top, #0d4497, #2f4591, #3f468b, #4b4785, #53497f);
 }
 
 .sidenav {
@@ -72,15 +71,26 @@ body {
 h1 {
   font-family: "Bebas Neue";
   text-align: center;
+  color: white;
 }
 
 h2 {
   font-family: "Edu TAS Beginner";
   text-align: center;
+  color: white;
+}
+
+h3 {
+  color: white;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 #play-button {
-  background-color: #4CAF50;
+  background-color: blue;
   border: none;
   color: white;
   padding: 20px 42px;
@@ -94,5 +104,5 @@ h2 {
 }
 
 #play-button:hover {
-  background-color: #45a049;
+  background-color: grey;
 }

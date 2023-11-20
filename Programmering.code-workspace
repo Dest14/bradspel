@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../Documents/Githubprojekt"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Programmering"
+	}
+}

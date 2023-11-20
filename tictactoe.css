@@ -1,7 +1,7 @@
 body {
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-image: linear-gradient(to right top, #0d4497, #2f4591, #3f468b, #4b4785, #53497f);
 }
+
 
 *,
 *::after,
@@ -9,14 +9,19 @@ body {
   box-sizing: border-box;
 }
 
+
 :root {
   --cell-size: 100px;
   --mark-size: calc(var(--cell-size) * .9);
 }
 
+
 body {
   margin: 0;
 }
+
+
+
 
 
 
@@ -32,6 +37,8 @@ body {
 }
 
 
+
+
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
@@ -43,19 +50,23 @@ body {
   cursor: pointer;
 }
 
+
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3) {
   border-top: none;
 }
 
+
 .cell:nth-child(3n + 1) {
   border-left: none;
 }
 
+
 .cell:nth-child(3n + 3) {
   border-right: none;
 }
+
 
 .cell:last-child,
 .cell:nth-child(8),
@@ -63,10 +74,12 @@ body {
   border-bottom: none;
 }
 
+
 .cell.x,
 .cell.circle {
   cursor: not-allowed;
 }
+
 
 .cell.x::before,
 .cell.x::after,
@@ -74,11 +87,13 @@ body {
   background-color: black;
 }
 
+
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
 .board.circle .cell:not(.x):not(.circle):hover::before {
   background-color: black;
 }
+
 
 .cell.x::before,
 .cell.x::after,
@@ -90,15 +105,18 @@ body {
   height: var(--mark-size);
 }
 
+
 .cell.x::before,
 .board.x .cell:not(.x):not(.circle):hover::before {
   transform: rotate(45deg);
 }
 
+
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::after {
   transform: rotate(-45deg);
 }
+
 
 .cell.circle::before,
 .cell.circle::after,
@@ -109,18 +127,21 @@ body {
   border-radius: 50%;
 }
 
+
 .cell.circle::before,
 .board.circle .cell:not(.x):not(.circle):hover::before {
   width: var(--mark-size);
   height: var(--mark-size);
 }
 
+
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::after {
   width: calc(var(--mark-size) * .7);
   height: calc(var(--mark-size) * .7);
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-image: linear-gradient(to right top, #0d4497, #2f4591, #3f468b, #4b4785, #53497f);
 }
+
 
 .winning-message {
   display: none;
@@ -137,6 +158,7 @@ body {
   flex-direction: column;
 }
 
+
 .winning-message button {
   font-size: 3rem;
   background-color: white;
@@ -145,11 +167,13 @@ body {
   cursor: pointer;
 }
 
+
 .winning-message button:hover {
   background-color: black;
   color: white;
   border-color: white;
 }
+
 
 .winning-message.show {
   display: flex;
@@ -166,20 +190,36 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 /* Background Styles Only */
 
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 
 * {
   font-family: Raleway;
 }
+
 
 .side-links {
   position: absolute;
   top: 15px;
   right: 15px;
 }
+
 
 .side-link {
   display: flex;
@@ -193,31 +233,42 @@ body {
   border-radius: 10px;
 }
 
+
 .side-link-youtube {
   background-color: red;
 }
+
 
 .side-link-twitter {
   background-color: #1DA1F2;
 }
 
+
 .side-link-github {
   background-color: #6e5494;
 }
+
 
 .side-link-text {
   margin-left: 10px;
   font-size: 18px;
 }
 
+
 .side-link-icon {
   color: white;
   font-size: 30px;
 }
+
 
 #main {
   transition: margin-left .5s;
   padding: 16px;
   font-family: "Bebas Neue";
   text-align: center;
+}
+
+h6 {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
 }
